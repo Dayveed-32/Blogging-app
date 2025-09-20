@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog App - Responsive Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- App Header -->
+        <div class="app-header">
+            <h1>Blog App</h1>
+            <button id="new-post-btn">New Post</button>
+        </div>
+
+        <!-- App Content -->
+        <div class="app-content">
+            <!-- Sidebar for Web -->
+            <div class="sidebar">
+                <h2>Filters</h2>
+                <div class="filter-group">
+                    <label for="tag-filter">Tag</label>
+                    <select id="tag-filter">
+                        <option value="all">All Tags</option>
+                        <option value="tech">Technology</option>
+                        <option value="travel">Travel</option>
+                        <option value="food">Food</option>
+                        <option value="lifestyle">Lifestyle</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="date-filter">Date</label>
+                    <input type="date" id="date-filter">
+                </div>
+            </div>
+
+            <!-- Main View -->
+            <div class="main-view">
+                <!-- Blog Editor View -->
+                <div id="editor-view" class="view">
+                    <input type="text" class="search-box" placeholder="Search blogs...">
+                    
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" placeholder="Enter title">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="content">Content</label>
+                        <textarea id="content" placeholder="Write your blog post here..."></textarea>
+                    </div>
+                </div>
+                
+                <!-- Blog Browser View -->
+                <div id="browser-view" class="view active">
+                    <!-- Mobile Filters -->
+                    <div class="mobile-filters">
+                        <div class="filter-group">
+                            <label for="tag-filter-mobile">Tag</label>
+                            <select id="tag-filter-mobile">
+                                <option value="all">All Tags</option>
+                                <option value="tech">Technology</option>
+                                <option value="travel">Travel</option>
+                                <option value="food">Food</option>
+                                <option value="lifestyle">Lifestyle</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="date-filter-mobile">Date</label>
+                            <input type="date" id="date-filter-mobile">
+                        </div>
+                    </div>
+                    
+                    <div class="blog-posts" id="blog-posts">
+                        <!-- Blog posts will be dynamically added here -->
+                    </div>
+                </div>
+                
+                <!-- Comments View -->
+                <div id="comments-view" class="view">
+                    <div class="comments-container">
+                        <div class="comments-header">
+                            <h2>Comments</h2>
+                        </div>
+                        
+                        <div class="comment-list" id="comment-list">
+                            <!-- Comments will be dynamically added here -->
+                        </div>
+                        
+                        <div class="comment-form">
+                            <input type="text" class="comment-input" id="comment-input" placeholder="Add a comment...">
+                            <button class="send-button" id="send-comment-btn">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Add Button -->
+        <button class="add-button" id="add-post-btn">
+            <i class="fas fa-plus"></i>
+        </button>
+
+        <!-- Bottom Navigation for Mobile -->
+        <div class="bottom-nav">
+            <a href="#" class="nav-item active" data-view="blog">
+                <i class="fas fa-blog"></i>
+                <span>Blog</span>
+            </a>
+            <a href="#" class="nav-item" data-view="home">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-item" data-view="search">
+                <i class="fas fa-search"></i>
+                <span>Search</span>
+            </a>
+        </div>
+    </div>  
+</body>
+<script src="script.js"></script>
+</html>
